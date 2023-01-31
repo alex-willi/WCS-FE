@@ -1,37 +1,36 @@
-# MVP Scope
+#Web Craft Studios
+#Scope
+The Web Craft Studios app is a platform for marketing, web development and graphic design. The app will allow associates to log in and post completed projects, as well as post updates on current projects for clients. Clients will also be able to log in and see the updates for their projects, as well as give feedback. The app will have full CRUD functionality, and will send email notifications when someone uses the contact us form.
 
-We plan on recreating Bleacher Report.
-Bleacher Report relies on twitter for content and we plan on upgrading this to posts from authors that will cleanup the web pages with more in depth articles.
+#Technologies MERN
 
-Bleacher Report does not have a section to comment and we will be focusing on adding the ability to comment on the articles that our authors will be making to give the same sense of community insight to the website that current;y exists from the Twitter captures.
+#User Stories
+As an associate, I want to be able to log in and post completed projects, so that clients can see the work that I have done.
+As a client, I want to be able to log in and see the updates for my projects, so that I can stay informed about the progress of my project.
+As an associate, I want to be able to post updates on current projects for clients, so that clients can stay informed about the progress of their project.
+As a client, I want to be able to give feedback on the updates for my project, so that the associates working on my project can make any necessary changes.
 
-MVP Looks like:
-Ability to post, delete and update articles from three authors.
-Ability for anyone to comment on these articles.
-Articles being relative to specific authors.
-Commenters will have the ability to like comments from others.
+#Wireframes
+Home
+![Screenshot from 2023-01-27 19-13-34](https://user-images.githubusercontent.com/116855471/215276601-1925a02c-2261-4ecd-9b70-f8eefe6bc303.png)
 
-# Breakdown of responsibilities
+Associate Detail
+![Screenshot from 2023-01-28 09-37-07](https://user-images.githubusercontent.com/116855471/215276573-7dd8f3e5-639b-438e-83ca-0519148cd28c.png)
 
-Frontend development- Brandon Tobin & Cagdas Kalsen
-Backend development- Alex Williams
-Documentation- Brandon Tobin, Cagdas Kalsen & Alex Williams
-Version Control- Brandon Tobin, Cagdas Kalsen & Alex Williams
+Project Detail
+![Screenshot from 2023-01-28 09-42-55](https://user-images.githubusercontent.com/116855471/215276560-99ffa540-a16d-4a71-b405-f157ca33bf82.png)
 
-# Wire Frame
+#Data Models
+![Screenshot from 2023-01-28 09-54-15](https://user-images.githubusercontent.com/116855471/215276500-25b24584-3caa-484d-bafe-ae13df228642.png)
 
-![Alt text](https://i.imgur.com/mRFOqJY.png)
+#Milestones
+Jan 30: Set up website skeleton.
+Jan 31: Set up database connection, routes and models.
+Feb 1: Sender static content and database content.
+Feb 2-3: Set up user authentication.
+Feb 4: CSS
+Feb 4-5: Polishing and Stretch goals: Client interactions.
 
-# ERD
-
-![Alt text](https://i.imgur.com/4eyygZF.png)
-
-# User Flow
-
-Each user will be directed to our home page where they can see a feed of posts from different authors. Each post will show the Author’s name, photo & title of the post. Once clicked on, the user will be routed to a different page where they can comment on posts they have chosen. On the top left we will have a logo displayed that will route you back to the homepage. Also on the home page, you can click the Author’s tab and see 3 Author’s.. (Brandon Tobin, Alex Williams & Cagdas Kalsen) under this tab you will see all of the posts from the selected Author. If you click the About Us tab, it will display all 3 Author’s and their LinkedIn/Github links as well as a short description about themselves.
-
-# Deploy Links
-
-front https://dashing-florentine-191495.netlify.app
-
-back https://project-3-sports.herokuapp.com/posts
+Feasibility
+Showing I can make and render data from mongodb on next.js.
+![Screenshot from 2023-01-27 18-06-59](https://user-images.githubusercontent.com/116855471/215403966-032372b5-cb71-4443-986b-30778c5811bf.png)
