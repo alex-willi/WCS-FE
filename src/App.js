@@ -1,9 +1,12 @@
 import { Routes, Route } from "react-router-dom";
-import { Link } from "react-router-dom";
 import Auth from "./pages/Auth";
 import Home from "./pages/Home";
+import Nav from "./components/nav";
+import Projects from "./pages/Projects";
+import About from "./pages/About";
 import { UserContext } from "./data/index";
 import { useState } from "react";
+import Contact from "./pages/Contact";
 console.log(UserContext);
 
 function App() {
@@ -21,9 +24,13 @@ function App() {
           setUser: setCurrentUser,
         }}
       >
-        <Link to="/auth">auth</Link> <Link to="/home">home</Link>
+        <Nav />
         <Routes>
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/about" element={<About />} />
           <Route path="/auth" element={<Auth />} />
+          <Route path="/projects" element={<Projects />} />
           <Route path="/" element={<Home />} />
         </Routes>
       </UserInfo>
