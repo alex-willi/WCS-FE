@@ -7,6 +7,7 @@ import About from "./pages/About";
 import { UserContext } from "./data/index";
 import { useState } from "react";
 import Contact from "./pages/Contact";
+import Profile from "./pages/Profile";
 console.log(UserContext);
 
 function App() {
@@ -32,6 +33,7 @@ function App() {
           <Route path="/auth" element={<Auth />} />
           <Route path="/projects" element={<Projects />} />
           <Route path="/" element={<Home />} />
+          <Route path="/Profile" element={<Profile />} />
         </Routes>
       </UserInfo>
     </div>
