@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { getUserToken } from "../utils/authToken";
+import { Link } from "react-router-dom";
 import AssociateForm from "../components/AssociateForm";
 
 const AssociateProfile = () => {
@@ -36,6 +37,7 @@ const AssociateProfile = () => {
       <p>Name: {associate.name}</p>
       <p>Email: {associate.email}</p>
       <p>Role: {associate.role}</p>
+      <Link to={`/edit/${associate.id}`}>Edit</Link>
       <AssociateForm />
     </div>
   );

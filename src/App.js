@@ -8,6 +8,7 @@ import { UserContext } from "./data/index";
 import { useState } from "react";
 import Contact from "./pages/Contact";
 import Profile from "./pages/Profile";
+import UpdateDeleteAssociate from "./pages/EditAssociate";
 function App() {
   const { Provider: UserInfo } = UserContext;
 
@@ -25,6 +26,7 @@ function App() {
       >
         <Nav />
         <Routes>
+          <Route path="/edit/:id" element={<UpdateDeleteAssociate />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/about" element={<About />} />
