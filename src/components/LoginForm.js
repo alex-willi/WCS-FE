@@ -13,7 +13,7 @@ const LoginForm = ({ signIn }) => {
     if (createdUserToken) {
       navigate("/");
     } else {
-      navigate("/");
+      navigate("/projects");
     }
     setInput(initialState);
   };

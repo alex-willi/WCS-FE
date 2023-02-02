@@ -8,8 +8,6 @@ import { UserContext } from "./data/index";
 import { useState } from "react";
 import Contact from "./pages/Contact";
 import Profile from "./pages/Profile";
-console.log(UserContext);
-
 function App() {
   const { Provider: UserInfo } = UserContext;
 

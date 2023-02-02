@@ -3,9 +3,12 @@ export default function Nav() {
   return (
     <div>
       <nav>
-        <Link to={"/"}>Home</Link> <Link to={"/projects"}>Projects</Link>{" "}
-        <Link to={"/about"}>About us</Link>{" "}
-        <Link to={"/contact"}>Contact Us</Link> <Link to={"/Auth"}>Log In</Link>
+        <Link to={"/"}>Home&nbsp;</Link>
+        <Link to={"/projects"}>Projects&nbsp;</Link>
+        <Link to={"/about"}>About us&nbsp;</Link>
+        <Link to={"/contact"}>Contact Us&nbsp;</Link>
+        <Link to={"/Auth"}>Log In&nbsp;</Link>
+        <Link to={"/Profile"}>Profile</Link>
       </nav>
     </div>
   );
