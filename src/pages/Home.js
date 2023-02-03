@@ -5,5 +5,6 @@ function Home(props) {
     </section>
   );
 }
+console.log(process.env);
 
 export default Home;
