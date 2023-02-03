@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { getUserToken } from "../utils/authToken";
+import EditProject from "../components/EditProject";
 const ProjectDetail = () => {
   const token = getUserToken();
   const [project, setProject] = useState({});
@@ -28,7 +29,7 @@ const ProjectDetail = () => {
         <p>{project.description}</p>
         <p>Client: {project.client}</p>
         <p>Associates: {project.associates}</p>
-        {token ? <Link to={`projectEdit/${project.id}`}>EDIT</Link> : null}
+        {token ? <EditProject /> : null}
       </div>
     );
   }
