@@ -31,6 +31,7 @@ const AssociateForm = () => {
       const res = await fetch("http://localhost:4000/associate", configs);
       const data = await res.json();
       console.log(data);
+      console.log(data);
     } catch (error) {
       console.error(error);
     }

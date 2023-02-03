@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { getUserToken } from "../utils/authToken";
-import { Link } from "react-router-dom";
 import AssociateForm from "../components/AssociateForm";
 import EditAssociate from "../components/EditAssociate";
 
@@ -21,6 +20,7 @@ const AssociateProfile = () => {
         throw new Error("Associate not found");
       }
       setAssociate(data);
+      console.log(data);
     } catch (err) {
       console.error(err);
     }
@@ -36,11 +36,11 @@ const AssociateProfile = () => {
   return (
     <div>
       <h1>Associate Profile</h1>
-      <p>Name: {associate.name}</p>
-      <p>Email: {associate.email}</p>
-      <p>Role: {associate.role}</p>
+      <p>Name: {associate.associate.name}</p>
+      <p>Email: {associate.associate.email}</p>
+      <p>Role: {associate.associate.role}</p>
       {token ? <EditAssociate /> : null}
-      <AssociateForm />
+      {associate.error == "Associate not found" ? <AssociateForm /> : null}
     </div>
   );
 };
