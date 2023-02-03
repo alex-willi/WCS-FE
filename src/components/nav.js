@@ -20,8 +20,10 @@ export default function Nav() {
         <Link to={"/about"}>About us&nbsp;</Link>
         <Link to={"/contact"}>Contact Us&nbsp;</Link>
         {token ? (
-          ((<Link to={"/Profile"}>Profile</Link>),
-          (<button onClick={() => handleLogOut()}>Log Out</button>))
+          <>
+            <Link to={"/Profile"}>Profile</Link>
+            <button onClick={() => handleLogOut()}>Log Out</button>
+          </>
         ) : (
           <Link to={"/Auth"}>Log In&nbsp;</Link>
         )}

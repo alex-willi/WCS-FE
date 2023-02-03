@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { getUserToken } from "../utils/authToken";
 import AssociateForm from "../components/AssociateForm";
 import EditAssociate from "../components/EditAssociate";
+import ProjectForm from "../components/PorjectForm";
 
 const AssociateProfile = () => {
   const token = getUserToken();
@@ -19,7 +20,7 @@ const AssociateProfile = () => {
       if (!data) {
         throw new Error("Associate not found");
       }
-      setAssociate(data);
+      setAssociate(data.associate);
       console.log(data);
     } catch (err) {
       console.error(err);
@@ -36,20 +37,24 @@ const AssociateProfile = () => {
   return (
     <div>
       <h1>Associate Profile</h1>
-      {associate.error == "Associate not found" ? (
+      {associate.error === "Associate not found" ? (
         <h1>Make a profile</h1>
       ) : (
         <>
-          <p>Name: {associate.associate.name}</p>
-          <p>Email: {associate.associate.email}</p>
-          <p>Role: {associate.associate.role}</p>
+          <p>Name: {associate.name}</p>
+          <p>Email: {associate.email}</p>
+          <p>Role: {associate.role}</p>
         </>
       )}
 
-      {associate.error == "Associate not found" ? (
+      {associate.error === "Associate not found" ? (
         <AssociateForm />
       ) : token ? (
-        <EditAssociate />
+        <>
+          {" "}
+          <EditAssociate setAssociate={setAssociate} />
+          <ProjectForm />
+        </>
       ) : null}
     </div>
   );

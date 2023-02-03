@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { getUserToken } from "../utils/authToken";
 
-const EditAssociate = () => {
+const EditAssociate = ({ setAssociate }) => {
+  console.log(setAssociate);
   const token = getUserToken();
   const [associateForm, setAssociateForm] = useState({
     name: "",
@@ -10,7 +11,23 @@ const EditAssociate = () => {
     role: "",
   });
   const { id } = useParams();
-
+  useEffect(() => {
+    const fetchAssociate = async () => {
+      try {
+        const response = await fetch(`https://wcs.herokuapp.com/associate`, {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        });
+        const data = await response.json();
+        setAssociateForm(data.associate);
+        console.log(associateForm, "THIS");
+      } catch (error) {
+        console.error(error);
+      }
+    };
+    fetchAssociate();
+  }, [id, token]);
   const handleChange = (event) => {
     setAssociateForm({
       ...associateForm,
@@ -22,7 +39,7 @@ const EditAssociate = () => {
     event.preventDefault();
     try {
       const response = await fetch(
-        `https://wcs.herokuapp.com/associate/${id}`,
+        `https://wcs.herokuapp.com/associate/${associateForm._id}`,
         {
           method: "PUT",
           headers: {
@@ -34,6 +51,7 @@ const EditAssociate = () => {
       );
       const associate = await response.json();
       setAssociateForm(associate);
+      setAssociate(associate);
     } catch (error) {
       console.error(error);
     }
