@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { getUserToken } from "../utils/authToken";
 import AssociateForm from "../components/AssociateForm";
+import EditAssociate from "../components/EditAssociate";
 
 const AssociateProfile = () => {
+  const token = getUserToken();
   const [associate, setAssociate] = useState(null);
 
   const fetchAssociate = async () => {
@@ -18,6 +20,7 @@ const AssociateProfile = () => {
         throw new Error("Associate not found");
       }
       setAssociate(data);
+      console.log(data);
     } catch (err) {
       console.error(err);
     }
@@ -33,10 +36,11 @@ const AssociateProfile = () => {
   return (
     <div>
       <h1>Associate Profile</h1>
-      <p>Name: {associate.name}</p>
-      <p>Email: {associate.email}</p>
-      <p>Role: {associate.role}</p>
-      <AssociateForm />
+      <p>Name: {associate.associate.name}</p>
+      <p>Email: {associate.associate.email}</p>
+      <p>Role: {associate.associate.role}</p>
+      {token ? <EditAssociate /> : null}
+      {associate.error == "Associate not found" ? <AssociateForm /> : null}
     </div>
   );
 };
