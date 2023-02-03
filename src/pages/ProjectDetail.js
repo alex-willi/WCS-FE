@@ -9,7 +9,7 @@ const ProjectDetail = () => {
   useEffect(() => {
     const fetchProject = async () => {
       try {
-        const response = await fetch(`http://localhost:4000/project/${id}`);
+        const response = await fetch(`https://wcs.herokuapp.com/project/${id}`);
         const data = await response.json();
         setProject(data);
         console.log(project);

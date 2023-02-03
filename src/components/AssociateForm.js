@@ -28,7 +28,7 @@ const AssociateForm = () => {
         },
       };
 
-      const res = await fetch("http://localhost:4000/associate", configs);
+      const res = await fetch("https://wcs.herokuapp.com/associate", configs);
       const data = await res.json();
       console.log(data);
       console.log(data);
