@@ -19,7 +19,7 @@ const EditProject = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      const response = await fetch(`http://localhost:4000/project/${id}`, {
+      const response = await fetch(`https://wcs.herokuapp.com/project/${id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -44,7 +44,7 @@ const EditProject = () => {
         },
       };
       const response = await fetch(
-        `http://localhost:4000/project/${id}`,
+        `https://wcs.herokuapp.com/project/${id}`,
         requestOptions
       );
       const deletedAssociate = await response.json();

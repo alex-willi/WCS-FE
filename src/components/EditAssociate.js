@@ -21,14 +21,17 @@ const EditAssociate = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      const response = await fetch(`http://localhost:4000/associate/${id}`, {
-        method: "PUT",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${token}`,
-        },
-        body: JSON.stringify(associateForm),
-      });
+      const response = await fetch(
+        `https://wcs.herokuapp.com/associate/${id}`,
+        {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+          },
+          body: JSON.stringify(associateForm),
+        }
+      );
       const associate = await response.json();
       setAssociateForm(associate);
     } catch (error) {
@@ -47,7 +50,7 @@ const EditAssociate = () => {
         },
       };
       const response = await fetch(
-        `http://localhost:4000/associate/${id}`,
+        `https://wcs.herokuapp.com/associate/${id}`,
         requestOptions
       );
       const deletedAssociate = await response.json();

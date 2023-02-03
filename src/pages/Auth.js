@@ -16,7 +16,7 @@ function Auth(props) {
       };
 
       const newUser = await fetch(
-        "http://localhost:4000/auth/register",
+        "https://wcs.herokuapp.com/auth/register",
         configs
       );
 
@@ -43,7 +43,10 @@ function Auth(props) {
         },
       };
 
-      const response = await fetch("http://localhost:4000/auth/login", configs);
+      const response = await fetch(
+        "https://wcs.herokuapp.com/auth/login",
+        configs
+      );
 
       const currentUser = await response.json();
 

@@ -9,7 +9,7 @@ const AssociateProfile = () => {
 
   const fetchAssociate = async () => {
     try {
-      const res = await fetch("http://localhost:4000/associate", {
+      const res = await fetch("https://wcs.herokuapp.com/associate", {
         headers: {
           "Content-Type": "application/json",
           Authorization: `Bearer ${getUserToken()}`,
@@ -36,11 +36,21 @@ const AssociateProfile = () => {
   return (
     <div>
       <h1>Associate Profile</h1>
-      <p>Name: {associate.associate.name}</p>
-      <p>Email: {associate.associate.email}</p>
-      <p>Role: {associate.associate.role}</p>
-      {token ? <EditAssociate /> : null}
-      {associate.error == "Associate not found" ? <AssociateForm /> : null}
+      {associate.error == "Associate not found" ? (
+        <h1>Make a profile</h1>
+      ) : (
+        <>
+          <p>Name: {associate.associate.name}</p>
+          <p>Email: {associate.associate.email}</p>
+          <p>Role: {associate.associate.role}</p>
+        </>
+      )}
+
+      {associate.error == "Associate not found" ? (
+        <AssociateForm />
+      ) : token ? (
+        <EditAssociate />
+      ) : null}
     </div>
   );
 };

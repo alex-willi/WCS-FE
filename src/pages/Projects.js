@@ -6,7 +6,7 @@ const ProjectsPage = () => {
 
   useEffect(() => {
     async function fetchProjects() {
-      const response = await fetch("http://localhost:4000/project");
+      const response = await fetch("https://wcs.herokuapp.com/project");
       const data = await response.json();
       setProjects(data);
     }
