@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { getUserToken } from "../utils/authToken";
-const EditProject = () => {
+const EditProject = ({ setProject }) => {
+  const navigate = useNavigate();
   const token = getUserToken();
   const [projectForm, setProjectForm] = useState({
     name: "",
@@ -29,6 +30,7 @@ const EditProject = () => {
       });
       const project = await response.json();
       setProjectForm(project);
+      setProject(project);
     } catch (error) {
       console.error(error);
     }
@@ -49,6 +51,7 @@ const EditProject = () => {
       );
       const deletedAssociate = await response.json();
       console.log(deletedAssociate);
+      navigate("/projects");
     } catch (err) {
       console.log(err);
     }

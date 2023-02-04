@@ -1,6 +1,9 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+
 import { getUserToken } from "../utils/authToken";
 const ProjectForm = () => {
+  const navigate = useNavigate();
   const token = getUserToken();
   const [formData, setFormData] = useState({
     name: "",
@@ -29,6 +32,7 @@ const ProjectForm = () => {
       .then((res) => res.json())
       .then((data) => {
         console.log("Success:", data);
+        navigate("/projects");
       })
       .catch((error) => {
         console.error("Error:", error);

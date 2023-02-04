@@ -20,8 +20,8 @@ const AssociateProfile = () => {
       if (!data) {
         throw new Error("Associate not found");
       }
-      setAssociate(data.associate);
-      console.log(data);
+      setAssociate(data);
+      console.log(associate);
     } catch (err) {
       console.error(err);
     }
@@ -38,24 +38,27 @@ const AssociateProfile = () => {
     <div>
       <h1>Associate Profile</h1>
       {associate.error === "Associate not found" ? (
-        <h1>Make a profile</h1>
+        <>
+          <h1>Make a profile</h1>
+          {token ? <AssociateForm setAssociate={setAssociate} /> : null}
+        </>
       ) : (
         <>
-          <p>Name: {associate.name}</p>
-          <p>Email: {associate.email}</p>
-          <p>Role: {associate.role}</p>
+          <p>Name: {associate.associate.name}</p>
+          <p>Email: {associate.associate.email}</p>
+          <p>Role: {associate.associate.role}</p>
+          {token ? (
+            <>
+              <EditAssociate
+                setAssociate={setAssociate}
+                associate={associate}
+              />
+
+              <ProjectForm />
+            </>
+          ) : null}
         </>
       )}
-
-      {associate.error === "Associate not found" ? (
-        <AssociateForm />
-      ) : token ? (
-        <>
-          {" "}
-          <EditAssociate setAssociate={setAssociate} />
-          <ProjectForm />
-        </>
-      ) : null}
     </div>
   );
 };

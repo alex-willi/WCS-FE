@@ -2,8 +2,8 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { getUserToken } from "../utils/authToken";
 
-const EditAssociate = ({ setAssociate }) => {
-  console.log(setAssociate);
+const EditAssociate = ({ setAssociate, associate }) => {
+  console.log(associate);
   const token = getUserToken();
   const [associateForm, setAssociateForm] = useState({
     name: "",
@@ -49,9 +49,10 @@ const EditAssociate = ({ setAssociate }) => {
           body: JSON.stringify(associateForm),
         }
       );
-      const associate = await response.json();
-      setAssociateForm(associate);
-      setAssociate(associate);
+      const updateAssociate = await response.json();
+      setAssociateForm(updateAssociate);
+      setAssociate({ associate: updateAssociate });
+      console.log(associate);
     } catch (error) {
       console.error(error);
     }
@@ -68,11 +69,11 @@ const EditAssociate = ({ setAssociate }) => {
         },
       };
       const response = await fetch(
-        `https://wcs.herokuapp.com/associate/${id}`,
+        `https://wcs.herokuapp.com/associate/${associateForm._id}`,
         requestOptions
       );
       const deletedAssociate = await response.json();
-      console.log(deletedAssociate);
+      setAssociate(deletedAssociate);
     } catch (error) {
       console.error(error);
     }

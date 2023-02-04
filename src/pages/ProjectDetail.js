@@ -29,7 +29,7 @@ const ProjectDetail = () => {
         <p>{project.description}</p>
         <p>Client: {project.client}</p>
         <p>Associates: {project.associates}</p>
-        {token ? <EditProject /> : null}
+        {token ? <EditProject setProject={setProject} /> : null}
       </div>
     );
   }
