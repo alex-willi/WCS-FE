@@ -68,12 +68,12 @@ const EditAssociate = ({ setAssociate, associate }) => {
           Authorization: `Bearer ${token}`,
         },
       };
-      const response = await fetch(
+      await fetch(
         `https://wcs.herokuapp.com/associate/${associateForm._id}`,
         requestOptions
       );
-      const deletedAssociate = await response.json();
-      setAssociate(deletedAssociate);
+
+      setAssociate({ associate: {} });
     } catch (error) {
       console.error(error);
     }
