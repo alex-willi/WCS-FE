@@ -11,9 +11,9 @@ const LoginForm = ({ signIn }) => {
     const createdUserToken = await signIn(input);
 
     if (createdUserToken) {
-      navigate("/");
+      navigate("/profile");
     } else {
-      navigate("/projects");
+      navigate("/");
     }
     setInput(initialState);
   };

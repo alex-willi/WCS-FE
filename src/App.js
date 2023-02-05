@@ -9,6 +9,9 @@ import { UserContext } from "./data/index";
 import { useState } from "react";
 import Contact from "./pages/Contact";
 import Profile from "./pages/Profile";
+import GraphicDesign from "./pages/GraphicDesign";
+import WebDevelopment from "./pages/WebDevelopment";
+import Advertisement from "./pages/Advertisement";
 function App() {
   const { Provider: UserInfo } = UserContext;
 
@@ -26,6 +29,9 @@ function App() {
       >
         <Nav />
         <Routes>
+          <Route path="/webdevelopment" element={<WebDevelopment />} />
+          <Route path="/graphicdesign" element={<GraphicDesign />} />
+          <Route path="/Advertisement" element={<Advertisement />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/about" element={<About />} />

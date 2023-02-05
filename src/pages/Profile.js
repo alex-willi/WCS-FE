@@ -3,6 +3,7 @@ import { getUserToken } from "../utils/authToken";
 import AssociateForm from "../components/AssociateForm";
 import EditAssociate from "../components/EditAssociate";
 import ProjectForm from "../components/PorjectForm";
+import RegisterForm from "../components/RegisterForm";
 
 const AssociateProfile = () => {
   const token = getUserToken();
@@ -55,6 +56,7 @@ const AssociateProfile = () => {
               />
 
               <ProjectForm />
+              <RegisterForm />
             </>
           ) : null}
         </>
