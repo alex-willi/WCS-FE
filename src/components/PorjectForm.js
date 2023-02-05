@@ -41,10 +41,10 @@ const ProjectForm = () => {
   };
 
   return (
-    <div class="col-md-6 mx-auto">
+    <div className="col-md-6 mx-auto">
       <h1>Make A New Project</h1>
       <form onSubmit={handleSubmit}>
-        <div class="form-group">
+        <div className="form-group">
           <input
             type="text"
             name="name"
@@ -52,20 +52,20 @@ const ProjectForm = () => {
             value={formData.name}
             onChange={handleChange}
             required
-            class="form-control"
+            className="form-control"
           />
         </div>
-        <div class="form-group">
+        <div className="form-group">
           <input
             type="text"
             name="img"
             placeholder="img URL"
             value={formData.img}
             onChange={handleChange}
-            class="form-control"
+            className="form-control"
           />
         </div>
-        <div class="form-group">
+        <div className="form-group">
           <input
             type="text"
             name="description"
@@ -73,10 +73,10 @@ const ProjectForm = () => {
             value={formData.description}
             onChange={handleChange}
             required
-            class="form-control"
+            className="form-control"
           />
         </div>
-        <div class="form-group">
+        <div className="form-group">
           <input
             type="text"
             name="client"
@@ -84,20 +84,20 @@ const ProjectForm = () => {
             value={formData.client}
             onChange={handleChange}
             required
-            class="form-control"
+            className="form-control"
           />
         </div>
-        <div class="form-group">
+        <div className="form-group">
           <input
             type="text"
             name="associates"
             placeholder="Associate Names"
             value={formData.associates}
             onChange={handleChange}
-            class="form-control"
+            className="form-control"
           />
         </div>
-        <button type="submit" class="btn btn-primary">
+        <button type="submit" className="btn btn-primary">
           Submit
         </button>
       </form>
