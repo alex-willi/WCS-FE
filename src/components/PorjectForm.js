@@ -41,50 +41,67 @@ const ProjectForm = () => {
   };
 
   return (
-    <>
+    <div class="col-md-6 mx-auto">
       <h1>Make A New Project</h1>
       <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          name="name"
-          placeholder="Project Name"
-          value={formData.name}
-          onChange={handleChange}
-          required
-        />
-        <input
-          type="text"
-          name="img"
-          placeholder="img URL"
-          value={formData.img}
-          onChange={handleChange}
-        />
-        <input
-          type="text"
-          name="description"
-          placeholder="Project Description"
-          value={formData.description}
-          onChange={handleChange}
-          required
-        />
-        <input
-          type="text"
-          name="client"
-          placeholder="Client Name"
-          value={formData.client}
-          onChange={handleChange}
-          required
-        />
-        <input
-          type="text"
-          name="associates"
-          placeholder="Associate Names"
-          value={formData.associates}
-          onChange={handleChange}
-        />
-        <button type="submit">Submit</button>
+        <div class="form-group">
+          <input
+            type="text"
+            name="name"
+            placeholder="Project Name"
+            value={formData.name}
+            onChange={handleChange}
+            required
+            class="form-control"
+          />
+        </div>
+        <div class="form-group">
+          <input
+            type="text"
+            name="img"
+            placeholder="img URL"
+            value={formData.img}
+            onChange={handleChange}
+            class="form-control"
+          />
+        </div>
+        <div class="form-group">
+          <input
+            type="text"
+            name="description"
+            placeholder="Project Description"
+            value={formData.description}
+            onChange={handleChange}
+            required
+            class="form-control"
+          />
+        </div>
+        <div class="form-group">
+          <input
+            type="text"
+            name="client"
+            placeholder="Client Name"
+            value={formData.client}
+            onChange={handleChange}
+            required
+            class="form-control"
+          />
+        </div>
+        <div class="form-group">
+          <input
+            type="text"
+            name="associates"
+            placeholder="Associate Names"
+            value={formData.associates}
+            onChange={handleChange}
+            class="form-control"
+          />
+        </div>
+        <button type="submit" class="btn btn-primary">
+          Submit
+        </button>
       </form>
-    </>
+    </div>
   );
 };
 
