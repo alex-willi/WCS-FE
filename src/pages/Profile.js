@@ -36,14 +36,14 @@ const AssociateProfile = () => {
   }
 
   return (
-    <div className="container mt-5">
-      <h1 className="text-center">Associate Profile</h1>
+    <div class="container mt-5">
+      <h1 class="text-center">Associate Profile</h1>
       {associate.error === "Associate not found" ? (
         <>
-          <h1 className="text-center">Make a profile</h1>
+          <h1 class="text-center">Make a profile</h1>
           {token ? (
-            <div className="card mb-3">
-              <div className="card-body">
+            <div class="card mb-3">
+              <div class="card-body">
                 <AssociateForm setAssociate={setAssociate} />
               </div>
             </div>
@@ -51,30 +51,30 @@ const AssociateProfile = () => {
         </>
       ) : (
         <>
-          <div className="card mb-3">
-            <div className="card-body">
-              <p className="card-text">Name: {associate.associate.name}</p>
-              <p className="card-text">Email: {associate.associate.email}</p>
-              <p className="card-text">Role: {associate.associate.role}</p>
+          <div class="card mb-3">
+            <div class="card-body">
+              <p class="card-text">Name: {associate.associate.name}</p>
+              <p class="card-text">Email: {associate.associate.email}</p>
+              <p class="card-text">Role: {associate.associate.role}</p>
             </div>
           </div>
           {token ? (
             <>
-              <div className="card mb-3">
-                <div className="card-body">
+              <div class="card mb-3">
+                <div class="card-body">
                   <EditAssociate
                     setAssociate={setAssociate}
                     associate={associate}
                   />
                 </div>
               </div>
-              <div className="card mb-3">
-                <div className="card-body">
+              <div class="card mb-3">
+                <div class="card-body">
                   <ProjectForm />
                 </div>
               </div>
-              <div className="card mb-3">
-                <div className="card-body">
+              <div class="card mb-3">
+                <div class="card-body">
                   <RegisterForm />
                 </div>
               </div>

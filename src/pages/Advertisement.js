@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+
 const Advertisement = () => {
   return (
     <div className="advertisement-page">
@@ -35,8 +35,10 @@ const Advertisement = () => {
       </div>
       <p className="advertisement-page__cta">
         Thank you for considering our services. Please feel free to{" "}
-        <Link to="/contact">contact us</Link> for more information or to request
-        a quote.
+        <a className="advertisement-page__cta-link" href="#">
+          contact us
+        </a>{" "}
+        for more information or to request a quote.
       </p>
     </div>
   );
