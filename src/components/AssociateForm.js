@@ -37,39 +37,46 @@ const AssociateForm = ({ setAssociate }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <div>
-        <label htmlFor="name">Name:</label>
-        <input
-          type="text"
-          id="name"
-          name="name"
-          value={formData.name}
-          onChange={handleChange}
-        />
-      </div>
-      <div>
-        <label htmlFor="email">Email:</label>
-        <input
-          type="email"
-          id="email"
-          name="email"
-          value={formData.email}
-          onChange={handleChange}
-        />
-      </div>
-      <div>
-        <label htmlFor="role">Role:</label>
-        <input
-          type="text"
-          id="role"
-          name="role"
-          value={formData.role}
-          onChange={handleChange}
-        />
-      </div>
-      <button type="submit">Submit</button>
-    </form>
+    <div class="col-md-6 mx-auto">
+      <form onSubmit={handleSubmit}>
+        <div class="form-group">
+          <label htmlFor="name">Name:</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            value={formData.name}
+            onChange={handleChange}
+            class="form-control"
+          />
+        </div>
+        <div class="form-group">
+          <label htmlFor="email">Email:</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
+            class="form-control"
+          />
+        </div>
+        <div class="form-group">
+          <label htmlFor="role">Role:</label>
+          <input
+            type="text"
+            id="role"
+            name="role"
+            value={formData.role}
+            onChange={handleChange}
+            class="form-control"
+          />
+        </div>
+        <button type="submit" class="btn btn-primary">
+          Submit
+        </button>
+      </form>
+    </div>
   );
 };
 

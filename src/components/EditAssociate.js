@@ -80,38 +80,57 @@ const EditAssociate = ({ setAssociate, associate }) => {
   };
 
   return (
-    <div>
-      <h1>Edit Your Profile</h1>
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="name">Name</label>
-        <input
-          id="name"
-          type="text"
-          name="name"
-          value={associateForm.name}
-          onChange={handleChange}
-        />
-        <label htmlFor="email">Email</label>
-        <input
-          id="email"
-          type="email"
-          name="email"
-          value={associateForm.email}
-          onChange={handleChange}
-        />
-        <label htmlFor="role">Role</label>
-        <input
-          id="role"
-          type="text"
-          name="role"
-          value={associateForm.role}
-          onChange={handleChange}
-        />
-        <button type="submit">Save Changes</button>
-      </form>
-      <button onClick={handleDelete} type="button">
-        DELETE
-      </button>
+    <div class="container mt-5">
+      <h1 class="text-center">Edit Your Profile</h1>
+      <div class="row">
+        <div class="col-md-6 offset-md-3">
+          <form onSubmit={handleSubmit}>
+            <div class="form-group">
+              <label htmlFor="name">Name</label>
+              <input
+                id="name"
+                type="text"
+                name="name"
+                value={associateForm.name}
+                onChange={handleChange}
+                class="form-control"
+              />
+            </div>
+            <div class="form-group">
+              <label htmlFor="email">Email</label>
+              <input
+                id="email"
+                type="email"
+                name="email"
+                value={associateForm.email}
+                onChange={handleChange}
+                class="form-control"
+              />
+            </div>
+            <div class="form-group">
+              <label htmlFor="role">Role</label>
+              <input
+                id="role"
+                type="text"
+                name="role"
+                value={associateForm.role}
+                onChange={handleChange}
+                class="form-control"
+              />
+            </div>
+            <button type="submit" class="btn btn-primary">
+              Save Changes
+            </button>
+          </form>
+          <button
+            onClick={handleDelete}
+            type="button"
+            class="btn btn-danger mt-3"
+          >
+            DELETE
+          </button>
+        </div>
+      </div>
     </div>
   );
 };

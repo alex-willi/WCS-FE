@@ -36,27 +36,48 @@ const AssociateProfile = () => {
   }
 
   return (
-    <div>
-      <h1>Associate Profile</h1>
+    <div class="container mt-5">
+      <h1 class="text-center">Associate Profile</h1>
       {associate.error === "Associate not found" ? (
         <>
-          <h1>Make a profile</h1>
-          {token ? <AssociateForm setAssociate={setAssociate} /> : null}
+          <h1 class="text-center">Make a profile</h1>
+          {token ? (
+            <div class="card mb-3">
+              <div class="card-body">
+                <AssociateForm setAssociate={setAssociate} />
+              </div>
+            </div>
+          ) : null}
         </>
       ) : (
         <>
-          <p>Name: {associate.associate.name}</p>
-          <p>Email: {associate.associate.email}</p>
-          <p>Role: {associate.associate.role}</p>
+          <div class="card mb-3">
+            <div class="card-body">
+              <p class="card-text">Name: {associate.associate.name}</p>
+              <p class="card-text">Email: {associate.associate.email}</p>
+              <p class="card-text">Role: {associate.associate.role}</p>
+            </div>
+          </div>
           {token ? (
             <>
-              <EditAssociate
-                setAssociate={setAssociate}
-                associate={associate}
-              />
-
-              <ProjectForm />
-              <RegisterForm />
+              <div class="card mb-3">
+                <div class="card-body">
+                  <EditAssociate
+                    setAssociate={setAssociate}
+                    associate={associate}
+                  />
+                </div>
+              </div>
+              <div class="card mb-3">
+                <div class="card-body">
+                  <ProjectForm />
+                </div>
+              </div>
+              <div class="card mb-3">
+                <div class="card-body">
+                  <RegisterForm />
+                </div>
+              </div>
             </>
           ) : null}
         </>

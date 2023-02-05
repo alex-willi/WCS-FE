@@ -23,31 +23,34 @@ const LoginForm = ({ signIn }) => {
   };
 
   return (
-    <>
+    <form onSubmit={handleSubmit} class="col-md-6 mx-auto">
       <h1>Login</h1>
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="username">Name: </label>
+      <div class="form-group">
+        <label htmlFor="username">Name:</label>
         <input
+          type="text"
           id="username"
           name="username"
           value={input.username}
           onChange={handleChange}
+          class="form-control"
         />
-        <br />
-        <br />
-        <label htmlFor="password">Password: </label>
+      </div>
+      <div class="form-group">
+        <label htmlFor="password">Password:</label>
         <input
           type="password"
           id="password"
           name="password"
           value={input.password}
           onChange={handleChange}
+          class="form-control"
         />
-        <br />
-        <br />
-        <input type="submit" value="Login User" />
-      </form>
-    </>
+      </div>
+      <button type="submit" class="btn btn-primary">
+        Login User
+      </button>
+    </form>
   );
 };
 

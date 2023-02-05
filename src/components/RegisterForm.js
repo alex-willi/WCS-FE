@@ -52,18 +52,20 @@ const RegisterForm = () => {
   };
 
   return (
-    <>
+    <form onSubmit={handleSubmit} className="col-md-6 mx-auto">
       <h1>Register a new user</h1>
-      <form onSubmit={handleSubmit}>
+      <div className="form-group">
         <label htmlFor="username">Name: </label>
         <input
           id="username"
           name="username"
           value={input.username}
           onChange={handleChange}
+          className="form-control"
+          required
         />
-        <br />
-        <br />
+      </div>
+      <div className="form-group">
         <label htmlFor="password">Password: </label>
         <input
           type="password"
@@ -71,12 +73,14 @@ const RegisterForm = () => {
           name="password"
           value={input.password}
           onChange={handleChange}
+          className="form-control"
+          required
         />
-        <br />
-        <br />
-        <input type="submit" value="Sign Up" />
-      </form>
-    </>
+      </div>
+      <button type="submit" className="btn btn-primary">
+        Sign Up
+      </button>
+    </form>
   );
 };
 
