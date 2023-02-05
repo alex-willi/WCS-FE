@@ -37,9 +37,9 @@ const AssociateForm = ({ setAssociate }) => {
   };
 
   return (
-    <div class="col-md-6 mx-auto">
+    <div className="col-md-6 mx-auto">
       <form onSubmit={handleSubmit}>
-        <div class="form-group">
+        <div className="form-group">
           <label htmlFor="name">Name:</label>
           <input
             type="text"
@@ -47,10 +47,10 @@ const AssociateForm = ({ setAssociate }) => {
             name="name"
             value={formData.name}
             onChange={handleChange}
-            class="form-control"
+            className="form-control"
           />
         </div>
-        <div class="form-group">
+        <div className="form-group">
           <label htmlFor="email">Email:</label>
           <input
             type="email"
@@ -58,10 +58,10 @@ const AssociateForm = ({ setAssociate }) => {
             name="email"
             value={formData.email}
             onChange={handleChange}
-            class="form-control"
+            className="form-control"
           />
         </div>
-        <div class="form-group">
+        <div className="form-group">
           <label htmlFor="role">Role:</label>
           <input
             type="text"
@@ -69,10 +69,10 @@ const AssociateForm = ({ setAssociate }) => {
             name="role"
             value={formData.role}
             onChange={handleChange}
-            class="form-control"
+            className="form-control"
           />
         </div>
-        <button type="submit" class="btn btn-primary">
+        <button type="submit" className="btn btn-primary">
           Submit
         </button>
       </form>

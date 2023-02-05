@@ -15,19 +15,26 @@ const ProjectsPage = () => {
   }, []);
   console.log(projects);
   return (
-    <div>
-      <h2>Projects</h2>
-      {projects.map((project) => (
-        <div key={project._id}>
-          <Link to={`/project/${project.id}`}>
-            <h3>{project.name}</h3>
-            <img src={project.img} alt={project.name} />
-          </Link>
-          <p>Description: {project.description}</p>
-          <p>Client: {project.client}</p>
-          <p>Associates: {project.associates}</p>
-        </div>
-      ))}
+    <div className="container my-5">
+      <h2 className="text-center mb-5">Projects</h2>
+      <div className="row">
+        {projects.map((project) => (
+          <div key={project._id} class="col-md-4 mb-5">
+            <div className="card h-100">
+              <img src={project.img} class="card-img-top" alt={project.name} />
+              <div className="card-body">
+                <h5 className="card-title">{project.name}</h5>
+                <p className="card-text">Description: {project.description}</p>
+                <p className="card-text">Client: {project.client}</p>
+                <p className="card-text">Associates: {project.associates}</p>
+                <Link to={`/project/${project.id}`} class="btn btn-primary">
+                  View Project
+                </Link>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };

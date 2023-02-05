@@ -23,9 +23,9 @@ const LoginForm = ({ signIn }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit} class="col-md-6 mx-auto">
+    <form onSubmit={handleSubmit} className="col-md-6 mx-auto">
       <h1>Login</h1>
-      <div class="form-group">
+      <div className="form-group">
         <label htmlFor="username">Name:</label>
         <input
           type="text"
@@ -33,10 +33,10 @@ const LoginForm = ({ signIn }) => {
           name="username"
           value={input.username}
           onChange={handleChange}
-          class="form-control"
+          className="form-control"
         />
       </div>
-      <div class="form-group">
+      <div className="form-group">
         <label htmlFor="password">Password:</label>
         <input
           type="password"
@@ -44,10 +44,10 @@ const LoginForm = ({ signIn }) => {
           name="password"
           value={input.password}
           onChange={handleChange}
-          class="form-control"
+          className="form-control"
         />
       </div>
-      <button type="submit" class="btn btn-primary">
+      <button type="submit" className="btn btn-primary">
         Login User
       </button>
     </form>

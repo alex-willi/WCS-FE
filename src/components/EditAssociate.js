@@ -80,12 +80,12 @@ const EditAssociate = ({ setAssociate, associate }) => {
   };
 
   return (
-    <div class="container mt-5">
-      <h1 class="text-center">Edit Your Profile</h1>
-      <div class="row">
-        <div class="col-md-6 offset-md-3">
+    <div className="container mt-5">
+      <h1 className="text-center">Edit Your Profile</h1>
+      <div className="row">
+        <div className="col-md-6 offset-md-3">
           <form onSubmit={handleSubmit}>
-            <div class="form-group">
+            <div className="form-group">
               <label htmlFor="name">Name</label>
               <input
                 id="name"
@@ -93,10 +93,10 @@ const EditAssociate = ({ setAssociate, associate }) => {
                 name="name"
                 value={associateForm.name}
                 onChange={handleChange}
-                class="form-control"
+                className="form-control"
               />
             </div>
-            <div class="form-group">
+            <div className="form-group">
               <label htmlFor="email">Email</label>
               <input
                 id="email"
@@ -104,10 +104,10 @@ const EditAssociate = ({ setAssociate, associate }) => {
                 name="email"
                 value={associateForm.email}
                 onChange={handleChange}
-                class="form-control"
+                className="form-control"
               />
             </div>
-            <div class="form-group">
+            <div className="form-group">
               <label htmlFor="role">Role</label>
               <input
                 id="role"
@@ -115,17 +115,17 @@ const EditAssociate = ({ setAssociate, associate }) => {
                 name="role"
                 value={associateForm.role}
                 onChange={handleChange}
-                class="form-control"
+                className="form-control"
               />
             </div>
-            <button type="submit" class="btn btn-primary">
+            <button type="submit" className="btn btn-primary">
               Save Changes
             </button>
           </form>
           <button
             onClick={handleDelete}
             type="button"
-            class="btn btn-danger mt-3"
+            className="btn btn-danger mt-3"
           >
             DELETE
           </button>
