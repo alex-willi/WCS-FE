@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { getUserToken } from "../utils/authToken";
 import EditProject from "../components/EditProject";
 const ProjectDetail = () => {
@@ -26,6 +26,7 @@ const ProjectDetail = () => {
     return (
       <div>
         <h1>{project.name}</h1>
+        <img src={project.img} alt={project.name} />
         <p>{project.description}</p>
         <p>Client: {project.client}</p>
         <p>Associates: {project.associates}</p>

@@ -7,6 +7,7 @@ const ProjectForm = () => {
   const token = getUserToken();
   const [formData, setFormData] = useState({
     name: "",
+    img: "",
     description: "",
     client: "",
     associates: "",
@@ -50,6 +51,13 @@ const ProjectForm = () => {
           value={formData.name}
           onChange={handleChange}
           required
+        />
+        <input
+          type="text"
+          name="img"
+          placeholder="img URL"
+          value={formData.img}
+          onChange={handleChange}
         />
         <input
           type="text"
