@@ -1,3 +1,4 @@
+import "../styles/nav.css";
 import { Link } from "react-router-dom";
 import { getUserToken, clearUserToken } from "../utils/authToken";
 import { useState, useEffect } from "react";
@@ -13,19 +14,33 @@ export default function Nav() {
     setIsLoggedIn(false);
   };
   return (
-    <div>
-      <nav>
-        <Link to={"/"}>Home&nbsp;</Link>
-        <Link to={"/projects"}>Projects&nbsp;</Link>
-        <Link to={"/about"}>About us&nbsp;</Link>
-        <Link to={"/contact"}>Contact Us&nbsp;</Link>
+    <div className="navbar">
+      <nav className="nav-bar">
+        <Link to={"/"} className="navbar-link">
+          Home&nbsp;
+        </Link>
+        <Link to={"/projects"} className="navbar-link">
+          Projects&nbsp;
+        </Link>
+        <Link to={"/about"} className="navbar-link">
+          About us&nbsp;
+        </Link>
+        <Link to={"/contact"} className="navbar-link">
+          Contact Us&nbsp;
+        </Link>
         {token ? (
           <>
-            <Link to={"/Profile"}>Profile</Link>
-            <button onClick={() => handleLogOut()}>Log Out</button>
+            <Link to={"/Profile"} className="navbar-link">
+              Profile
+            </Link>
+            <button className="nav-btn" onClick={() => handleLogOut()}>
+              Log Out
+            </button>
           </>
         ) : (
-          <Link to={"/Auth"}>Log In&nbsp;</Link>
+          <Link to={"/Auth"} className="navbar-link">
+            Log In&nbsp;
+          </Link>
         )}
       </nav>
     </div>
