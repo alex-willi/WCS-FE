@@ -3,7 +3,7 @@ import { useState } from "react";
 import { UserContext } from "../data/";
 import { useContext } from "react";
 import { setUserToken, clearUserToken } from "../utils/authToken";
-const RegisterForm = ({ signUp }) => {
+const RegisterForm = () => {
   const { setAuth, setUser } = useContext(UserContext);
   const initialState = { username: "", password: "" };
   const [input, setInput] = useState(initialState);
@@ -37,7 +37,7 @@ const RegisterForm = ({ signUp }) => {
   };
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const createdUserToken = await signUp(input);
+    const createdUserToken = await register(input);
 
     if (createdUserToken) {
       navigate("/");
@@ -66,6 +66,7 @@ const RegisterForm = ({ signUp }) => {
         <br />
         <label htmlFor="password">Password: </label>
         <input
+          type="password"
           id="password"
           name="password"
           value={input.password}
