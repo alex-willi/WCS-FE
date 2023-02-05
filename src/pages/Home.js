@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const Home = () => {
   return (
     <div className="welcome-page">
-      <h1 className="welcome-page__title">Welcome to Web Cradt Studios</h1>
+      <h1 className="welcome-page__title">Welcome to Web Craft Studios</h1>
       <p className="welcome-page__intro">
         We offer a wide range of services for web development, advertisement,
         and graphic design.
@@ -50,7 +50,7 @@ const Home = () => {
         Thank you for considering our services. Please feel free to contact us
         for more information or to request a quote.
       </p>
-      <Link to="/contactus">Contact Us</Link>
+      <Link to="/contact">Contact Us</Link>
     </div>
   );
 };
