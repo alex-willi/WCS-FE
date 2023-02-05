@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { getUserToken } from "../utils/authToken";
 
-const EditAssociate = () => {
+const EditAssociate = ({ setAssociate, associate }) => {
+  console.log(associate);
   const token = getUserToken();
   const [associateForm, setAssociateForm] = useState({
     name: "",
@@ -10,7 +11,23 @@ const EditAssociate = () => {
     role: "",
   });
   const { id } = useParams();
-
+  useEffect(() => {
+    const fetchAssociate = async () => {
+      try {
+        const response = await fetch(`https://wcs.herokuapp.com/associate`, {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        });
+        const data = await response.json();
+        setAssociateForm(data.associate);
+        console.log(associateForm, "THIS");
+      } catch (error) {
+        console.error(error);
+      }
+    };
+    fetchAssociate();
+  }, [id, token]);
   const handleChange = (event) => {
     setAssociateForm({
       ...associateForm,
@@ -22,7 +39,7 @@ const EditAssociate = () => {
     event.preventDefault();
     try {
       const response = await fetch(
-        `https://wcs.herokuapp.com/associate/${id}`,
+        `https://wcs.herokuapp.com/associate/${associateForm._id}`,
         {
           method: "PUT",
           headers: {
@@ -32,8 +49,10 @@ const EditAssociate = () => {
           body: JSON.stringify(associateForm),
         }
       );
-      const associate = await response.json();
-      setAssociateForm(associate);
+      const updateAssociate = await response.json();
+      setAssociateForm(updateAssociate);
+      setAssociate({ associate: updateAssociate });
+      console.log(associate);
     } catch (error) {
       console.error(error);
     }
@@ -49,12 +68,12 @@ const EditAssociate = () => {
           Authorization: `Bearer ${token}`,
         },
       };
-      const response = await fetch(
-        `https://wcs.herokuapp.com/associate/${id}`,
+      await fetch(
+        `https://wcs.herokuapp.com/associate/${associateForm._id}`,
         requestOptions
       );
-      const deletedAssociate = await response.json();
-      console.log(deletedAssociate);
+
+      setAssociate({ associate: {} });
     } catch (error) {
       console.error(error);
     }

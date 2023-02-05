@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { getUserToken } from "../utils/authToken";
 
-const AssociateForm = () => {
+const AssociateForm = ({ setAssociate }) => {
   const token = getUserToken();
   const [formData, setFormData] = useState({
     name: "",
@@ -30,8 +30,7 @@ const AssociateForm = () => {
 
       const res = await fetch("https://wcs.herokuapp.com/associate", configs);
       const data = await res.json();
-      console.log(data);
-      console.log(data);
+      setAssociate(data);
     } catch (error) {
       console.error(error);
     }
