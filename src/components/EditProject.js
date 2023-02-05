@@ -68,6 +68,13 @@ const EditProject = ({ setProject }) => {
           value={projectForm.name}
           onChange={handleChange}
         />
+        <input
+          type="text"
+          name="img"
+          placeholder="img URL"
+          value={projectForm.img}
+          onChange={handleChange}
+        />
         <label htmlFor="description">Description</label>
         <input
           id="description"

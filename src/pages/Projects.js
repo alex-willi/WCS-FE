@@ -21,6 +21,7 @@ const ProjectsPage = () => {
         <div key={project._id}>
           <Link to={`/project/${project.id}`}>
             <h3>{project.name}</h3>
+            <img src={project.img} alt={project.name} />
           </Link>
           <p>Description: {project.description}</p>
           <p>Client: {project.client}</p>
