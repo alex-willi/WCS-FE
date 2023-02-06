@@ -1,6 +1,12 @@
 
 # Web Craft Studios
 
+Front End
+https://glittering-praline-5f275b.netlify.app
+
+Back End
+https://wcs.herokuapp.com/project
+
 # Scope
 
 
