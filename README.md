@@ -1,6 +1,8 @@
+
 # Web Craft Studios
 
 # Scope
+
 
 The Web Craft Studios app is a platform for marketing, web development and graphic design. The app will allow associates to log in and post completed projects, as well as post updates on current projects for clients. Clients will also be able to log in and see the updates for their projects, as well as give feedback. The app will have full CRUD functionality, and will send email notifications when someone uses the contact us form.
 
