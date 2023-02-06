@@ -1,5 +1,5 @@
 import React from "react";
-
+import { Link } from "react-router-dom";
 const GraphicDesign = () => {
   return (
     <div className="container graphic-design-page">
@@ -63,10 +63,8 @@ const GraphicDesign = () => {
       <div className="col-12 text-center">
         <p className="graphic-design-page__cta">
           Thank you for considering our services. Please feel free to{" "}
-          <a className="graphic-design-page__cta-link" href="#">
-            contact us
-          </a>{" "}
-          for more information or to request a quote.
+          <Link to="/contact">contact us</Link> for more information or to
+          request a quote.
         </p>
       </div>
     </div>

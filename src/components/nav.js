@@ -1,7 +1,7 @@
-import "../styles/nav.css";
 import { Link } from "react-router-dom";
 import { getUserToken, clearUserToken } from "../utils/authToken";
 import { useState, useEffect } from "react";
+import "../styles/nav.css";
 export default function Nav() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const token = getUserToken();
